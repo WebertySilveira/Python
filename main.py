@@ -10,6 +10,9 @@ header = {'User-Agent' : 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KH
 request = requests.get(url, headers = header).json()
 
 
+
+
+
 ativo = {}
 for i in request['poloAtivo']:
   ativo.update([('nome', i['nome']), ('tipo', i['tipo'])])
@@ -46,4 +49,5 @@ list = {
     ],
 }
 
-print(json.dumps(list, indent=4))
+with open('./' + clearProcess + '.json', 'w') as outfile:
+  json.dump(list, outfile)
