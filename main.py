@@ -1,7 +1,7 @@
 import requests
 import json
 
-process = input()
+process = input('Digite o número do processo: ')
 clearProcess = process.replace('.', '')
 clearProcess = clearProcess.replace('-', '')
 
